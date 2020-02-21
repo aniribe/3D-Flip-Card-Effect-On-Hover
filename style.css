@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: montserrat;
+}
+
+body {
+  background: #333;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card {
+  cursor: pointer;
+  width: 340px;
+  height: 430px;
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  transition: transform 0.6s linear;
+  box-shadow: 2px 2px 20px 8px rgba(0, 0, 0, 0.5);
+}
+
+.front img {
+  height: 100%;
+}
+
+.front {
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.back {
+  background: #2c2b28;
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.back-content {
+  color: #079c96;
+  text-align: center;
+  width: 100%;
+}
+
+.back-content span {
+  color: rgb(204, 203, 203);
+}
+
+.sm {
+  margin: 20px 0;
+}
+
+.sm a {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  background-image: url(images/socialmediaicon64.jpg);
+  background-repeat: no-repeat;
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.social-fb {
+  background-position: -40px -260px;
+}
+
+.social-fb:hover {
+  background-position: -40px -210px;
+}
+
+.social-tw {
+  background-position: -96px -258px;
+}
+
+.social-tw:hover {
+  background-position: -96px -208px;
+}
+
+.social-in {
+  background-position: -348px -339px;
+}
+
+.social-in:hover {
+  background-position: -348px -300px;
+}
+
+.social-g {
+  background-position: -297px -336px;
+}
+
+.social-g:hover {
+  background-position: -297px -297px;
+}
+
+.card:hover > .front {
+  transform: perspective(600px) rotateY(-180deg);
+}
+
+.card:hover > .back {
+  transform: perspective(600px) rotateY(0deg);
+}
